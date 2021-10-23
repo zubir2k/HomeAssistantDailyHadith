@@ -1,0 +1,13 @@
+## In this example, I use markdown card. 
+## There are 3 main sensor attributes in the markdown card.
+## 1. Hadith Title
+## 2. Hadith in Arabic
+## 3. Hadith in English Translation
+
+type: markdown
+content: |-
+  ### {{state_attr("sensor.daily_sunnah", "hadith")[0].chapterTitle}}
+
+  {{state_attr("sensor.daily_sunnah", "hadith")[1].body}}
+  {{state_attr("sensor.daily_sunnah", "hadith")[0].body}}
+title: Daily Hadith
