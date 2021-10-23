@@ -1,6 +1,6 @@
 # HomeAssistantDailyHadith ![visitors](https://visitor-badge.glitch.me/badge?page_id=zubir2k.homeassistantdailyhadith.visitor-badge)
 Daily Hadith in your Home Assistant. Source obtained from [Sunnah.com API](https://sunnah.api-docs.io/1.0/getting-started/introduction).\
-Please register and obtain your API Key for free [here](https://github.com/sunnah-com/api/issues/new?template=request-for-api-access.md&title=Request+for+API+access%3A+%5BYour+Name%5D)
+Please register and obtain your API Key [here](https://github.com/sunnah-com/api/issues/new?template=request-for-api-access.md&title=Request+for+API+access%3A+%5BYour+Name%5D)
 
 ## Installation
 ### 1. [configuration.yaml](configuration.yaml)
@@ -14,7 +14,7 @@ Please register and obtain your API Key for free [here](https://github.com/sunna
 
 ### 3. [automation.yaml](automation.yaml)
 - Example given is based on sun state sensor (Sunrise)
-- You may simply 'Copy and paste' 😋
+- You may simply 'Copy and paste'
 
 *Automation Ideas*
 - Idea #1: Read out the daily hadith via TTS
