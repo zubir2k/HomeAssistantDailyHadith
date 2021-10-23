@@ -1,0 +1,17 @@
+## Be sure to apply the API from Sunnah.com website (https://sunnah.api-docs.io/1.0/getting-started/introduction)
+## Once the application has been approved, you will be getting the API Key via email.
+## Replace the API key in the headers section x-api-key.
+## The API allow 5,000 requests per day. Currently the scan Interval is set at 12 Hours. You may adjust accordingly.
+
+sensors:
+  ## Sunnah (Daily Hadith) ##
+  - platform: rest
+    name: Daily Sunnah
+    resource: https://api.sunnah.com/v1/hadiths/random
+    json_attributes:
+      - hadith
+      - collection
+    headers:
+      x-api-key: abcdefghijklmnopqrstuvwxyz1234567890 #replace this with your API key
+    scan_interval: 43200 #12 hours interval
+    value_template: '{{ now().date() }}'
