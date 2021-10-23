@@ -1,0 +1,32 @@
+## This automation will play out doa pagi (Hijjaz) as well as sending out daily hadith to a telegram group.
+## This is one of many automation that can be used with this sensor. 
+## Due to the response is in HTML, telegram notification will capture the HTML tag when sending out the text.
+## Similarly when using TTS (e.g. to read out aloud), it will also read out the HTML tag.
+## To overcome this, I use regex to filter out any HTML tags.
+
+alias: Doa Pagi on Sunrise
+description: ''
+trigger:
+  - platform: template
+    value_template: '{{ states("sun.sun") == "above_horizon" }}'
+condition: []
+action:
+  - service: media_player.play_media
+    target:
+      entity_id:
+        - media_player.all_devices #change this to your desired speaker
+    data:
+      media_content_id: media-source://media_source/local/audio/doa-pagi.mp3 #you are free to change this to your own preference.
+      media_content_type: audio/mp3
+  - service: notify.telegram_group #change this to your telegram id
+    data:
+      title: |
+        *Daily Hadith {{ now().strftime("%-d %B %Y") }}
+        {{state_attr("sensor.daily_sunnah", "hadith")[0].chapterTitle}}*
+      message: >-
+        {% set regex_hadith = '<*.>(.*?)<.*>' %}
+        {{state_attr("sensor.daily_sunnah", "hadith")[0].body |
+        regex_findall_index(regex_hadith)}} {% set regex_perawi = '<b>(.*?)</b>'
+        %} *{{state_attr("sensor.daily_sunnah", "hadith")[0].body |
+        regex_findall_index(regex_perawi)}}*
+mode: single
