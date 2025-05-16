@@ -1,4 +1,8 @@
-# HomeAssistantDailyHadith ![visitors](https://visitor-badge.glitch.me/badge?page_id=zubir2k.homeassistantdailyhadith.visitor-badge)
+> [!Tip]
+> This repository is no longer maintained. Please proceed to the Daily Hadith integration: \
+> [https://github.com/zubir2k/homeassistant-dailyhadith](https://github.com/zubir2k/homeassistant-dailyhadith)
+
+# HomeAssistantDailyHadith
 Daily Hadith in your Home Assistant. Source obtained from [Sunnah.com API](https://sunnah.api-docs.io/1.0/getting-started/introduction).\
 Please register and obtain your API Key [here](https://github.com/sunnah-com/api/issues/new?template=request-for-api-access.md&title=Request+for+API+access%3A+%5BYour+Name%5D)
 
